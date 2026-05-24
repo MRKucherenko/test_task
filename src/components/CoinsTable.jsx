@@ -1,18 +1,16 @@
 import { Table } from "antd";
-import { useCoins } from "../hooks/useCoins";
 import { columns } from "../utils/columsHelpers";
 
-export const CoinsTable = () => {
-  const {isLoading, data} = useCoins();
+export const CoinsTable = ({ data, loading, pagination}) => {
 
   return (
    <Table 
       columns={columns}
       dataSource={data ?? []}
       rowKey="id"
-      loading={isLoading}
+      loading={loading}
       scroll={{ y: 600 }}
-      pagination={false}
+      pagination={pagination}
    />
   );
 }
