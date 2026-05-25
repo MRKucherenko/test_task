@@ -11,4 +11,4 @@ export const useCoins = () => {
     },
   })
   return { data, isLoading: isLoading, isFetching, error }
-}
+};

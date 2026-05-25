@@ -7,4 +7,4 @@ export const Coins = () => {
   return(
     <CoinsTable data={data} loading={isLoading} pagination={false}/>
   )
-}
+};

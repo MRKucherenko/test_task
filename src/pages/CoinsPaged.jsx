@@ -1,12 +1,12 @@
-import { useSearchParams } from 'react-router-dom';
-import { useCoinsPaged } from '../hooks/useCoinsPaged';
-import { CoinsTable } from '../components/CoinsTable';
+import { useSearchParams } from "react-router-dom";
+import { useCoinsPaged } from "../hooks/useCoinsPaged";
+import { CoinsTable } from "../components/CoinsTable";
 
 export const CoinsPaged = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const page = Number(searchParams.get('page')) || 1;
+  const page = Number(searchParams.get("page")) || 1;
 
-  const { data, isLoading, isFetching} = useCoinsPaged(page);
+  const { data, isLoading, isFetching } = useCoinsPaged(page);
 
   const handelChange = (event) => {
     setSearchParams({
@@ -24,7 +24,6 @@ export const CoinsPaged = () => {
         total: 400,
 
         onChange: handelChange,
-
         showSizeChanger: false,
       }}
     />

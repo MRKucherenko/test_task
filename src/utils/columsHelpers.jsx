@@ -37,11 +37,17 @@ export const columns = [
     title: '24h %',
     dataIndex: 'price_change_percentage_24h',
 
-    render: (value) => (
-      <p style={{ color: value > 0 ? 'green' : 'red' }}>
-        {value.toFixed(2)}%
-      </p>
-    ),
+render: (value) => {
+
+  if (value == null){
+    return ' '
+  } 
+  return (
+    <span style={{ color: value > 0 ? 'green' : 'red' }}>
+      {value.toFixed(2)}%
+    </span>
+  )
+},
 
     sorter: (a, b) =>
       a.price_change_percentage_24h - b.price_change_percentage_24h,
